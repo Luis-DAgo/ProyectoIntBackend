@@ -60,9 +60,9 @@ public class AuthController {
 		
 		if(nuevoUsuario.getRoles().contains("Admin")) {
 			roles.add(rolService.getByRolNombre(RolNombre.ROLE_ADMIN).get());
+		}
 			usuario.setRoles(roles);
 			usuarioService.save(usuario);
-		}
 		return new ResponseEntity(new Mensaje("Usuario guardado"),HttpStatus.CREATED);
 	} 
 	
